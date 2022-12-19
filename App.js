@@ -1,19 +1,11 @@
-import React from "react";
 import {
-  Text,
-  Link,
-  HStack,
-  Center,
-  Heading,
-  Switch,
-  useColorMode,
-  NativeBaseProvider,
-  extendTheme,
-  VStack,
-  Box,
+  extendTheme, HStack, NativeBaseProvider, Switch, Text, useColorMode
 } from "native-base";
-import NativeBaseIcon from "./components/NativeBaseIcon";
-import { Platform } from "react-native";
+import React from "react";
+import 'react-native-gesture-handler';
+import { Provider } from 'react-redux';
+import Navigation from './src/navigation';
+import store from './src/store';
 
 // Define the config
 const config = {
@@ -27,7 +19,9 @@ export const theme = extendTheme({ config });
 export default function App() {
   return (
     <NativeBaseProvider>
-      <Center
+      <Provider store={store}>
+        <Navigation/>
+      {/* <Center
         _dark={{ bg: "blueGray.900" }}
         _light={{ bg: "blueGray.50" }}
         px={4}
@@ -61,7 +55,8 @@ export default function App() {
           </Link>
           <ToggleDarkMode />
         </VStack>
-      </Center>
+      </Center> */}
+      </Provider>
     </NativeBaseProvider>
   );
 }
