@@ -30,7 +30,7 @@ const CustomSidebarMenu = (props) => {
                 style={styles.sideMenuProfileIcon}
             />
             <DrawerContentScrollView {...props}>
-                <DrawerItemList {...props} />
+                {/* <DrawerItemList {...props} /> */}
                 <DrawerItem
                     label="Visit Us"
                     onPress={() => Linking.openURL('https://aboutreact.com/')}
